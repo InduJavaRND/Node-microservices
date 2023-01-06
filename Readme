@@ -1,0 +1,87 @@
+Node Js Microservices
+
+here we have three services
+User service - Running on port 5000
+||-Routes
+----Add user
+----Get all the users from the database
+----Get a particular user
+----Delete a user
+
+Payload example:
+{
+    "name": "Johndoe",
+    "age":2244
+}
+Response:
+New user created successfully!
+
+
+Todo service - Running on port 5001
+||-Routes
+----Add todo
+----Get all the todos from the database
+----Get a particular todo
+----Delete a todo
+
+Payload:
+{
+    "title":"title222"
+}
+Response:
+{ 
+    "_id": "63ac68802e8e2cdea4428782",
+    "title": "title2",
+    "__v": 0
+}
+
+Task service - Running on port 9000
+||-Routes
+----Add task
+----Get a particular task
+
+Payload:[post]
+{
+    "userID":"63ac6fe9cdf31409fe00a8ba",
+    "todoID":"63ac68802e8e2cdea4428782",
+    "task":"read a new book"
+}    
+
+Respone:
+New Task added successfully!
+
+payload:[get]
+ {
+        "_id": "63acbf482d35e8d48e30ebe6",
+        "userID": "63ac6fe9cdf31409fe00a8ba",
+        "todoID": "63ac68802e8e2cdea4428782",
+        "taskTitle": "read a new book",
+        "__v": 0
+    }
+Payload:[ get with id] 
+Response:
+{
+    "userName": "John doe",
+    "Title": "title2",
+    "taskTitle": "read a new book"
+}   
+
+
+Folder structure
+
+|-db
+||-config.env
+||-db.Js
+|-nodemodules
+|-task
+||-tasklist.Js
+||-tasks.Js
+|-todo
+||-todo.Js
+||-todolist.js
+|-users
+||-user.js
+||-userlist.js
+|-package-lock.json
+|-package.json
+|-Readme
